@@ -1,0 +1,27 @@
+{
+    "context": {
+      "domain": "beckn.one:data:environment",
+      "action": "discover",
+      "version": "2.0.0",
+      "country": "IND",
+      "city": "std:DEL",
+      "bap_id": "opendata-market.example.com",
+      "bap_uri": "https://opendata-market.example.com/beckn",
+      "network_id": [
+        "beckn.one:data:environment"
+      ],
+      "schema_context": [
+        "https://climate-data.example.com/schema/DatasetItem/v1/context.jsonld"
+      ],
+      "transaction_id": "txn-rain-2025-03-0001",
+      "message_id": "msg-rain-00000001",
+      "ttl": "PT10M",
+      "timestamp": "2025-02-15T10:00:00Z"
+    },
+    "message": {
+      "filters": {
+        "type": "jsonpath",
+        "expression": "$[?(@.beckn:itemAttributes.refreshType == 'STATIC' && @.beckn:itemAttributes.granularity == 'GRID_DAILY')]"
+      }
+    }
+  }

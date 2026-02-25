@@ -88,6 +88,30 @@
       "@type": "rdf:Property",
       "rdfs:label": "validationMethod",
       "rdfs:comment": "Standard or algorithm used for dataset validation."
+    },
+    {
+      "@id": "dataset:verticalRange",
+      "@type": "rdf:Property",
+      "rdfs:label": "verticalRange",
+      "rdfs:comment": "Vertical extent of the dataset (e.g. surface, 0–2km AGL)."
+    },
+    {
+      "@id": "dataset:dataType",
+      "@type": "rdf:Property",
+      "rdfs:label": "dataType",
+      "rdfs:comment": "Type or representation of the data (e.g. GriddedProbabilityField, TimeSeries)."
+    },
+    {
+      "@id": "dataset:rawUpdateFrequency",
+      "@type": "rdf:Property",
+      "rdfs:label": "rawUpdateFrequency",
+      "rdfs:comment": "Frequency at which the underlying raw dataset is updated."
+    },
+    {
+      "@id": "dataset:latestRawDataAt",
+      "@type": "rdf:Property",
+      "rdfs:label": "latestRawDataAt",
+      "rdfs:comment": "Timestamp of the latest raw data available that feeds this dataset."
     }
   ]
 }

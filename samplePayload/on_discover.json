@@ -13,7 +13,7 @@
   },
   "message": {
     "catalog": {
-      "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-v2/main/schema/core/v2/context.jsonld",
+      "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-v2/core-v2.0.0-rc/schema/core/v2/context.jsonld",
       "@type": "beckn:Catalog",
       "beckn:id": "catalog-climate-rain-001",
       "beckn:descriptor": {
@@ -25,7 +25,7 @@
       "beckn:bppUri": "https://climate-data.example.com/beckn",
       "beckn:items": [
         {
-          "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-v2/main/schema/core/v2/context.jsonld",
+          "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-v2/core-v2.0.0-rc/schema/core/v2/context.jsonld",
           "@type": "beckn:Item",
           "beckn:id": "ds-rainprob-delhi-ncr-march-2025",
           "beckn:descriptor": {
@@ -60,7 +60,11 @@
             "schema:name": "Rainwater Probability — Delhi NCR — March 2025",
             "schema:description": "Daily precipitation probability (%) per 5km grid cell for Delhi-NCR, March 2025.",
             "schema:temporalCoverage": "2025-03-01/2025-03-31",
-            "schema:spatialCoverage": "Delhi-NCR — 5km x 5km grid",
+            "schema:spatialCoverage": {
+              "@type": "schema:Place",
+              "schema:name": "Delhi-NCR",
+              "schema:description": "Coverage region for the dataset"
+            },
             "schema:license": "https://creativecommons.org/licenses/by/4.0/",
             "schema:variableMeasured": [
               "PrecipitationProbability"
@@ -75,11 +79,34 @@
                 "schema:encodingFormat": "application/x-parquet"
               }
             ],
+            "schema:temporalResolution": "P1D",
+            "schema:spatialResolution": {
+              "schema:value": 5,
+              "schema:unitText": "km"
+            },
+            "schema:creator": {
+              "@type": "schema:Organization",
+              "schema:name": "ClimateData India Pvt. Ltd.",
+              "schema:url": "https://climate-data.example.com"
+            },
+            "schema:isBasedOn": [
+              "IMD surface observations",
+              "Global forecast system model outputs"
+            ],
             "refreshType": "STATIC",
             "granularity": "GRID_DAILY",
             "rowCountEstimate": 31000,
             "columnCount": 5,
             "sensitivityLevel": "PUBLIC",
+            "verticalRange": {
+              "schema:description": "Above ground level",
+              "schema:minValue": 0,
+              "schema:maxValue": 2000,
+              "schema:unitText": "m"
+            },
+            "dataType": "GriddedProbabilityField",
+            "rawUpdateFrequency": "PT1H",
+            "latestRawDataAt": "2025-03-31T23:59:59Z",
             "qualityFlags": {
               "gapFilledPercent": 1.2,
               "outlierRemovedPercent": 0.5,

@@ -67,6 +67,22 @@ components:
           oneOf:
             - type: string
             - type: object
+        "schema:temporalResolution":
+          oneOf:
+            - type: string
+            - type: object
+        "schema:spatialResolution":
+          oneOf:
+            - type: string
+            - type: object
+        "schema:creator":
+          oneOf:
+            - type: string
+            - type: object
+        "schema:isBasedOn":
+          oneOf:
+            - type: string
+            - type: object
         "dataset:refreshType":
           type: string
         "dataset:refreshFrequency":
@@ -79,6 +95,17 @@ components:
           type: integer
         "dataset:sensitivityLevel":
           type: string
+        "dataset:verticalRange":
+          oneOf:
+            - type: string
+            - type: object
+        "dataset:dataType":
+          type: string
+        "dataset:rawUpdateFrequency":
+          type: string
+        "dataset:latestRawDataAt":
+          type: string
+          format: date-time
         "dataset:qualityFlags":
           type: object
           additionalProperties: true

@@ -18,7 +18,12 @@
     "outlierRemovedPercent": "dataset:outlierRemovedPercent",
     "latencyMinutes": "dataset:latencyMinutes",
     "uptime99DayPercent": "dataset:uptime99DayPercent",
-    "validationMethod": "dataset:validationMethod"
+    "validationMethod": "dataset:validationMethod",
+
+    "verticalRange": "dataset:verticalRange",
+    "dataType": "dataset:dataType",
+    "rawUpdateFrequency": "dataset:rawUpdateFrequency",
+    "latestRawDataAt": "dataset:latestRawDataAt"
   }
 }
 

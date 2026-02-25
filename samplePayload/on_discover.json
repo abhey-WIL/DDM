@@ -1,0 +1,94 @@
+{
+  "context": {
+    "domain": "beckn.one:data:environment",
+    "action": "on_discover",
+    "version": "2.0.0",
+    "bap_id": "opendata-market.example.com",
+    "bap_uri": "https://opendata-market.example.com/beckn",
+    "bpp_id": "climate-data.example.com",
+    "bpp_uri": "https://climate-data.example.com/beckn",
+    "transaction_id": "txn-rain-2025-03-0001",
+    "message_id": "msg-rain-00000002",
+    "timestamp": "2025-02-15T10:00:01Z"
+  },
+  "message": {
+    "catalog": {
+      "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-v2/main/schema/core/v2/context.jsonld",
+      "@type": "beckn:Catalog",
+      "beckn:id": "catalog-climate-rain-001",
+      "beckn:descriptor": {
+        "@type": "beckn:Descriptor",
+        "schema:name": "ClimateData — Rainwater Probability Datasets",
+        "beckn:shortDesc": "Historical and forecast rain probability datasets for Indian cities and regions"
+      },
+      "beckn:bppId": "climate-data.example.com",
+      "beckn:bppUri": "https://climate-data.example.com/beckn",
+      "beckn:items": [
+        {
+          "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-v2/main/schema/core/v2/context.jsonld",
+          "@type": "beckn:Item",
+          "beckn:id": "ds-rainprob-delhi-ncr-march-2025",
+          "beckn:descriptor": {
+            "@type": "beckn:Descriptor",
+            "schema:name": "Rainwater Probability — Delhi NCR — March 2025",
+            "beckn:shortDesc": "Daily probability of rainfall (%) for grid cells covering Delhi NCR for March 2025",
+            "beckn:longDesc": "Static dataset providing daily precipitation probability (%) for each 5km x 5km grid cell covering the Delhi-NCR region for the period 2025-03-01 to 2025-03-31. Derived from IMD and model ensemble outputs, suitable for hydrology, agriculture, and urban drainage planning."
+          },
+          "beckn:category": {
+            "@type": "schema:CategoryCode",
+            "schema:codeValue": "environment:weather:rainwater:historical",
+            "schema:name": "Environment — Weather — Rainwater Probability (Historical)"
+          },
+          "beckn:provider": {
+            "beckn:id": "climate-data-provider-001",
+            "beckn:descriptor": {
+              "@type": "beckn:Descriptor",
+              "schema:name": "ClimateData India Pvt. Ltd."
+            }
+          },
+          "beckn:isActive": true,
+          "beckn:rateable": true,
+          "beckn:rating": {
+            "@type": "beckn:Rating",
+            "beckn:ratingValue": 4.6,
+            "beckn:ratingCount": 37
+          },
+          "beckn:itemAttributes": {
+            "@context": "./schema/DatasetItem/v1/context.jsonld",
+            "@type": "DatasetItem",
+            "schema:identifier": "ds-rainprob-delhi-ncr-march-2025",
+            "schema:name": "Rainwater Probability — Delhi NCR — March 2025",
+            "schema:description": "Daily precipitation probability (%) per 5km grid cell for Delhi-NCR, March 2025.",
+            "schema:temporalCoverage": "2025-03-01/2025-03-31",
+            "schema:spatialCoverage": "Delhi-NCR — 5km x 5km grid",
+            "schema:license": "https://creativecommons.org/licenses/by/4.0/",
+            "schema:variableMeasured": [
+              "PrecipitationProbability"
+            ],
+            "schema:measurementTechnique": "Model ensemble based on IMD and global forecast systems",
+            "schema:usageInfo": "Intended for hydrology, agriculture planning, urban drainage capacity analysis, and research.",
+            "schema:conditionsOfAccess": "Attribution required; no resale of raw data.",
+            "schema:distribution": [
+              {
+                "@type": "schema:DataDownload",
+                "schema:contentUrl": "https://climate-data.example.com/samples/ds-rainprob-delhi-ncr-march-2025-sample.parquet",
+                "schema:encodingFormat": "application/x-parquet"
+              }
+            ],
+            "refreshType": "STATIC",
+            "granularity": "GRID_DAILY",
+            "rowCountEstimate": 31000,
+            "columnCount": 5,
+            "sensitivityLevel": "PUBLIC",
+            "qualityFlags": {
+              "gapFilledPercent": 1.2,
+              "outlierRemovedPercent": 0.5,
+              "validationMethod": "IMD_RAIN_VALIDATION_2025"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+

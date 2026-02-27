@@ -1,12 +1,12 @@
 {
   "context": {
-    "domain": "beckn.one:data:environment",
+    "domain": "beckn:dataset",
     "action": "on_select",
     "version": "2.0.0",
-    "bap_id": "opendata-market.example.com",
-    "bap_uri": "https://opendata-market.example.com/beckn",
-    "bpp_id": "climate-data.example.com",
-    "bpp_uri": "https://climate-data.example.com/beckn",
+    "bap_id": "ev-charging.sandbox1.com",
+    "bap_uri": "https://ev-charging.sandbox1.com",
+    "bpp_id": "ev-charging.sandbox2.com",
+    "bpp_uri": "https://ev-charging.sandbox2.com",
     "transaction_id": "txn-rain-2025-03-0001",
     "message_id": "msg-rain-00000004",
     "timestamp": "2025-02-15T10:03:01Z"

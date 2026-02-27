@@ -1,12 +1,12 @@
 {
   "context": {
-    "domain": "beckn.one:data:environment",
+    "domain": "beckn:dataset",
     "action": "on_confirm",
     "version": "2.0.0",
-    "bap_id": "opendata-market.example.com",
-    "bap_uri": "https://opendata-market.example.com/beckn",
-    "bpp_id": "climate-data.example.com",
-    "bpp_uri": "https://climate-data.example.com/beckn",
+    "bap_id": "ev-charging.sandbox1.com",
+    "bap_uri": "https://ev-charging.sandbox1.com",
+    "bpp_id": "ev-charging.sandbox2.com",
+    "bpp_uri": "https://ev-charging.sandbox2.com",
     "transaction_id": "txn-rain-2025-03-0001",
     "message_id": "msg-rain-00000008",
     "timestamp": "2025-02-15T10:05:08Z"
@@ -16,7 +16,7 @@
       "@context": "https://raw.githubusercontent.com/beckn/protocol-specifications-v2/core-v2.0.0-rc/schema/core/v2/context.jsonld",
       "@type": "beckn:Order",
       "beckn:id": "ord-rain-2025-03-00017",
-      "beckn:orderStatus": "CONFIRMED",
+      "beckn:orderStatus": "COMPLETED",
       "beckn:orderNumber": "RAIN-ORD-2025-03-00017",
       "beckn:seller": "climate-data-provider-001",
       "beckn:buyer": {
@@ -109,10 +109,6 @@
         "beckn:id": "ffl-rain-2025-03-00017",
         "beckn:mode": "DIGITAL",
         "beckn:fulfillmentStatus": "COMPLETED",
-        "trackingAction": {
-          "id": "track-rain-2025-03-00017",
-          "url": "https://climate-data.example.com/portal/orders/ord-rain-2025-03-00017"
-        },
         "beckn:deliveryAttributes": {
           "@context": "./schema/DatasetFulfillment/v1/context.jsonld",
           "@type": "beckn:DatasetFulfillment",
